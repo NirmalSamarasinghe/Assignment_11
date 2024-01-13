@@ -6,5 +6,4 @@ export class ItemModel{
         this.price = price;
         this.qty_on_hand = qty_on_hand;
     }
-
 }

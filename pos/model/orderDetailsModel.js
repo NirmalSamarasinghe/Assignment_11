@@ -5,5 +5,4 @@ export class orderModel{
         this.price=price;
         this.qty=qty;
     }
-
 }

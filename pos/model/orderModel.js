@@ -8,5 +8,4 @@ export class OrderModel{
         this.discount=discount;
         this.cash=cash;
     }
-
 }

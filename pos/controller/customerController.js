@@ -130,13 +130,26 @@ submit.on('click', (e) => {
             emailValue
         );
 
-        Swal.fire(
-            'Save Successfully !',
-            'Successful',
-            'success'
-        )
+        let jsonCustomer = JSON.stringify(customer);
 
-        customer_db.push(customer);
+        // Swal.fire(
+        //     'Save Successfully !',
+        //     'Successful',
+        //     'success'
+        // )
+
+        $.ajax({
+                url:"http://localhost:8080/page/customer",
+                type:"POST",
+                data:jsonCustomer,
+                headers:{"Content-Type":"application/json"},
+                success: (res) =>{
+                    console.log(JSON.stringify(res))
+                },
+                error: (err)=>{
+                    console.error(err)
+                }
+        });
 
         populateCustomerTable();
 
